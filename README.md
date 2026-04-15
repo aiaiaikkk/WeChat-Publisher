@@ -1,6 +1,9 @@
 # WeChat Draft Tools
 
-本工具用于把本地 Markdown / HTML 内容整理后写入微信公众号草稿箱。
+本工具用于把本地 Markdown / HTML 内容整理后写入微信公众号草稿箱，当前支持：
+
+- `news`：图文消息草稿
+- `newspic`：图片消息草稿
 
 ## 给 Agent 用的快速接入方式
 
@@ -93,14 +96,28 @@ npm run token
 npm run draft -- --title "标题" --file examples/article.md --cover ./cover.png
 ```
 
+如果要创建图片消息草稿：
+
+```bash
+npm run draft -- --article-type newspic --title "标题" --file examples/article.md --image ./cover.png
+```
+
 常用参数：
 
+- `--article-type`：草稿类型，可选 `news` 或 `newspic`，默认 `news`
 - `--title`：文章标题，必填
 - `--file`：正文文件，支持 Markdown 或 HTML，必填
-- `--cover`：封面图，必填；会上传为永久素材并作为 `thumb_media_id`
+- `--cover`：图文消息封面图；`news` 类型必填，也可兼作 `newspic` 的图片素材
+- `--image`：图片消息素材；`newspic` 类型推荐使用
+- `--cover-image`：图片消息可选封面图 URL 来源文件，会上传后写入 `cover_info`
 - `--digest`：摘要，可选；不传时自动从正文截取
 - `--author`：作者，可选；不传时使用 `.env` 中的 `WECHAT_AUTHOR`
 - `--source-url`：阅读原文链接，可选
+
+类型差异：
+
+- `news`：需要封面图，会生成 `thumb_media_id`
+- `newspic`：不需要 `digest`、`author`、`content_source_url`、`thumb_media_id`，而是写入 `image_info.image_list`
 
 ## 正文图片
 
@@ -128,15 +145,22 @@ npm run get-draft -- --media-id "草稿 media_id"
 npm run update-draft -- --media-id "草稿 media_id" --index 0 --title "标题" --file examples/article.md --cover ./cover.png
 ```
 
+更新图片消息草稿示例：
+
+```bash
+npm run update-draft -- --media-id "草稿 media_id" --index 0 --article-type newspic --title "标题" --file examples/article.md --image ./cover.png
+```
+
 说明：
 
 - `--media-id`：已有草稿的 `media_id`
 - `--index`：要更新第几篇，单图文一般是 `0`
-- `--title`、`--file`、`--cover`：和新建草稿一致
+- `--title`、`--file`、`--cover` / `--image`：和新建草稿一致
 
 ## 注意
 
 - 不要把 `.env` 提交到 Git。
 - 正文图片会走“上传发表内容中的图片”接口。
 - 封面图会走“上传永久素材”接口，并生成 `thumb_media_id`。
+- 图片消息素材同样会走“上传永久素材”接口，并写入 `image_info.image_list`。
 - 创建草稿走 `draft/add` 接口。

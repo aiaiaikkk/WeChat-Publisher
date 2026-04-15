@@ -14,13 +14,21 @@ const index = Number(args.index || 0);
 if (!Number.isInteger(index) || index < 0) {
   throw new Error("--index must be a non-negative integer");
 }
+const articleType = String(args["article-type"] || "news").trim().toLowerCase();
 requireArg(args, "title");
 requireArg(args, "file");
-requireArg(args, "cover");
+if (articleType === "news") {
+  requireArg(args, "cover");
+} else if (articleType === "newspic") {
+  if (!args.image && !args.cover) {
+    throw new Error("Missing --image (or --cover) for article_type=newspic");
+  }
+} else {
+  throw new Error(`Unsupported --article-type: ${articleType}. Expected news or newspic.`);
+}
 
 const config = getConfig();
 const { accessToken, article } = await buildArticle({ args, config, rootDir });
 const result = await updateDraft(accessToken, mediaId, index, article);
 
 console.log(JSON.stringify(result, null, 2));
-

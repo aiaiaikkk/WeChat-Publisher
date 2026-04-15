@@ -27,12 +27,21 @@ Set up a usable WeChat Official Account draft workflow so the user can create, r
 6. If doctor passes, optionally verify with:
    - `npm run draft -- --title "测试标题" --file examples/article.md --cover examples/cover.svg.png`
 
+## Supported Draft Types
+
+- `news`: standard article draft
+- `newspic`: image-message draft
+
+When the user does not specify a type, default to `news`.
+
 ## Important Rules
 
 - Never commit `.env` or `token-cache.json`
 - If token request returns `40164 invalid ip not in whitelist`, stop and tell the user to add the current outbound IP to the WeChat IP whitelist
 - Prefer API-based draft creation and update over browser automation
 - When using local Markdown images, keep paths valid relative to the article file because they will be uploaded and replaced automatically
+- For `news`, require `--cover`
+- For `newspic`, require `--image` or reuse `--cover`
 
 ## User-Facing Success Criteria
 
