@@ -1,6 +1,8 @@
 # WeChat Draft Tools
 
-本工具用于把本地 Markdown / HTML 内容整理后写入微信公众号草稿箱，当前支持：
+本工具用于把本地 Markdown / HTML 内容整理后写入微信公众号草稿箱，并且可以与飞书 CLI 一起组成“先飞书、后微信”的 Agent 工作流。
+
+当前支持的微信草稿类型：
 
 - `news`：图文消息草稿
 - `newspic`：图片消息草稿
@@ -15,8 +17,19 @@ npm run setup
 npm run doctor
 ```
 
+如果你希望同时接入飞书，推荐顺序是：
+
+```bash
+# 先按飞书官方文档安装飞书 CLI
+# 再安装并配置本项目
+npm install
+npm run setup
+npm run doctor
+```
+
 说明：
 
+- 飞书部分请直接使用官方安装方式，不要在本项目里复制飞书实现代码
 - `npm run setup`：自动生成 `.env`
 - `npm run doctor`：检查 Node 版本、`.env` 配置、以及微信 token 连通性
 - 如果 `doctor` 报 `40164 invalid ip ... not in whitelist`，说明当前机器出口 IP 还没有加入公众号后台白名单
@@ -24,6 +37,24 @@ npm run doctor
 项目里也提供了给 Agent 看的说明文件：
 
 - `AGENTS.md`
+
+## 飞书集成方式
+
+本项目不内置飞书代码实现，而是推荐直接使用飞书官方提供的 CLI 安装方式：
+
+- 官方文档：
+  - https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu
+
+推荐安装顺序：
+
+1. 先按飞书官方文档安装并配置飞书 CLI
+2. 再安装本项目并配置微信相关能力
+
+这样做的好处是：
+
+- 飞书能力保持官方标准安装方式，后续升级更稳
+- 本项目只负责微信草稿能力，不和飞书实现耦合
+- Agent 可以先用飞书处理素材、文档、协作，再调用本项目投递到微信草稿箱
 
 ## 准备
 

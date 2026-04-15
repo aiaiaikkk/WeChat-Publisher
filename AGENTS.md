@@ -4,7 +4,7 @@ This project is designed to be configured by coding agents such as Codex or Open
 
 ## Goal
 
-Set up a usable WeChat Official Account draft workflow so the user can create, read, and update article drafts after a single setup request.
+Set up a usable content workflow where Feishu is installed first via the official Feishu CLI path, and WeChat draft capability is configured afterwards through this project.
 
 ## Environment Expectations
 
@@ -17,14 +17,16 @@ Set up a usable WeChat Official Account draft workflow so the user can create, r
 
 ## Recommended Agent Flow
 
-1. `npm install`
-2. `npm run setup`
-3. Ask the user only for missing sensitive values:
+1. Install Feishu CLI first, following the official Feishu documentation:
+   - `https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu`
+2. `npm install`
+3. `npm run setup`
+4. Ask the user only for missing sensitive values:
    - `WECHAT_APPID`
    - `WECHAT_APPSECRET`
-4. Write them into `.env`
-5. Run `npm run doctor`
-6. If doctor passes, optionally verify with:
+5. Write them into `.env`
+6. Run `npm run doctor`
+7. If doctor passes, optionally verify with:
    - `npm run draft -- --title "测试标题" --file examples/article.md --cover examples/cover.svg.png`
 
 ## Supported Draft Types
@@ -37,6 +39,7 @@ When the user does not specify a type, default to `news`.
 ## Important Rules
 
 - Never commit `.env` or `token-cache.json`
+- Do not reimplement Feishu integration inside this project when the official Feishu CLI installation path is sufficient
 - If token request returns `40164 invalid ip not in whitelist`, stop and tell the user to add the current outbound IP to the WeChat IP whitelist
 - Prefer API-based draft creation and update over browser automation
 - When using local Markdown images, keep paths valid relative to the article file because they will be uploaded and replaced automatically
