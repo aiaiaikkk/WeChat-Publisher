@@ -21,12 +21,10 @@
 
 ### 第二步：再安装本项目
 
-让你的 AI 工具进入项目目录后执行：
+将下面这句话直接发给你的 AI 工具：
 
-```bash
-npm install
-npm run setup
-npm run doctor
+```text
+帮我安装并配置 WeChat Publisher：https://github.com/aiaiaikkk/WeChat-Publisher
 ```
 
 ## 用户需要提供什么
