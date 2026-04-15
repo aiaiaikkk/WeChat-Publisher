@@ -1,0 +1,19 @@
+{
+  "name": "wechat-draft-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "doctor": "node scripts/doctor.js",
+    "token": "node scripts/get-token.js",
+    "draft": "node scripts/create-draft.js",
+    "get-draft": "node scripts/get-draft.js",
+    "update-draft": "node scripts/update-draft.js",
+    "upload:content-image": "node scripts/upload-content-image.js",
+    "upload:cover": "node scripts/upload-cover.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

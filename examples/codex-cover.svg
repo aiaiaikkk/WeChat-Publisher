@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#101820"/>
+  <rect x="60" y="70" width="780" height="360" rx="34" fill="#1d2b3a" stroke="#4ea1ff" stroke-width="4"/>
+  <text x="96" y="190" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="700">Codex CLI</text>
+  <text x="96" y="260" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="700">离线安装指南</text>
+  <text x="98" y="330" fill="#94d6ff" font-family="Arial, sans-serif" font-size="28">Windows / macOS 完整流程</text>
+</svg>
