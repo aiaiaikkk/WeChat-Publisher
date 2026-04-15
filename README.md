@@ -42,8 +42,17 @@ npm run doctor
 
 本项目不内置飞书代码实现，而是推荐直接使用飞书官方提供的 CLI 安装方式：
 
-- 官方文档：
-  - https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu
+使用以下方式写安装方式：
+
+`Agent 自动安装。将以下指令直接复制发送给你的 AI 工具（如 TRAE、Cursor、Codex、Claude Code），让它替你完成安装：`
+
+```text
+帮我安装飞书 CLI：https://github.com/larksuite/cli
+```
+
+参考文档：
+
+- https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu
 
 推荐安装顺序：
 

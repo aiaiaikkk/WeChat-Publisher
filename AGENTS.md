@@ -18,7 +18,12 @@ Set up a usable content workflow where Feishu is installed first via the officia
 ## Recommended Agent Flow
 
 1. Install Feishu CLI first, following the official Feishu documentation:
-   - `https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu`
+   - User-facing install text:
+     `Agent 自动安装。将以下指令直接复制发送给你的 AI 工具（如 TRAE、Cursor、Codex、Claude Code），让它替你完成安装：`
+   - Instruction:
+     `帮我安装飞书 CLI：https://github.com/larksuite/cli`
+   - Reference:
+     `https://open.feishu.cn/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu`
 2. `npm install`
 3. `npm run setup`
 4. Ask the user only for missing sensitive values:
