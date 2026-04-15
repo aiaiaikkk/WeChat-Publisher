@@ -9,19 +9,21 @@
 
 ## 给 Agent 用的快速接入方式
 
-如果你希望把这个项目交给 OpenClaw、Codex 之类的 Agent 自动配置，推荐让 Agent 按下面顺序执行：
+如果你希望把这个项目交给 Agent 自动安装和配置，推荐按下面方式告诉你的 AI 工具。
 
-```bash
-npm install
-npm run setup
-npm run doctor
+### 第一步：先安装飞书 CLI
+
+Agent 自动安装。将以下指令直接复制发送给你的 AI 工具（如 TRAE、Cursor、Codex、Claude Code），让它替你完成安装：
+
+```text
+帮我安装飞书 CLI：https://github.com/larksuite/cli
 ```
 
-如果你希望同时接入飞书，推荐顺序是：
+### 第二步：再安装并配置本项目
+
+安装好飞书 CLI 之后，再把下面这段指令交给你的 AI 工具继续执行：
 
 ```bash
-# 先按飞书官方文档安装飞书 CLI
-# 再安装并配置本项目
 npm install
 npm run setup
 npm run doctor
@@ -29,7 +31,6 @@ npm run doctor
 
 说明：
 
-- 飞书部分请直接使用官方安装方式，不要在本项目里复制飞书实现代码
 - `npm run setup`：自动生成 `.env`
 - `npm run doctor`：检查 Node 版本、`.env` 配置、以及微信 token 连通性
 - 如果 `doctor` 报 `40164 invalid ip ... not in whitelist`，说明当前机器出口 IP 还没有加入公众号后台白名单
