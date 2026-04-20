@@ -3,4 +3,4 @@ token-cache.json
 node_modules/
 .DS_Store
 dist/
-
+outputs/

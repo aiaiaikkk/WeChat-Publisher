@@ -34,9 +34,11 @@ function main() {
   console.log("");
   console.log("Next steps:");
   console.log("1. Open .env and fill WECHAT_APPID / WECHAT_APPSECRET.");
-  console.log("2. Optionally adjust WECHAT_AUTHOR and comment settings.");
-  console.log("3. Run: npm run doctor");
-  console.log("4. If doctor passes, create a draft with: npm run draft -- --title \"...\" --file examples/article.md --cover examples/cover.svg.png");
+  console.log("2. Fill SUPERAIAPI_API_KEY if you want image/video generation.");
+  console.log("3. Optionally adjust WECHAT_AUTHOR and comment settings.");
+  console.log("4. Run: npm run doctor");
+  console.log("5. If doctor passes, create a draft with: npm run draft -- --title \"...\" --file examples/article.md --cover examples/cover.svg.png");
+  console.log("6. Generate an image with: npm run image -- --provider nano-banana2 --prompt \"...\" --output ./outputs/image.png");
 }
 
 try {

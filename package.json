@@ -11,7 +11,8 @@
     "get-draft": "node scripts/get-draft.js",
     "update-draft": "node scripts/update-draft.js",
     "upload:content-image": "node scripts/upload-content-image.js",
-    "upload:cover": "node scripts/upload-cover.js"
+    "upload:cover": "node scripts/upload-cover.js",
+    "image": "node scripts/generate-image.js"
   },
   "engines": {
     "node": ">=20"

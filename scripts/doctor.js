@@ -55,6 +55,7 @@ function isPlaceholder(value) {
   return [
     "your_appid_here",
     "your_appsecret_here",
+    "your_superaiapi_api_key_here",
   ].includes(String(value).trim());
 }
 
@@ -101,12 +102,21 @@ async function main() {
     "WECHAT_AUTHOR",
     "WECHAT_NEED_OPEN_COMMENT",
     "WECHAT_ONLY_FANS_CAN_COMMENT",
+    "SUPERAIAPI_BASE_URL",
   ]) {
     if (env[key]) {
       ok(`${key} is configured`);
     } else {
       warn(`${key} is empty, default behavior may be used`);
     }
+  }
+
+  if (!env.SUPERAIAPI_API_KEY) {
+    warn("SUPERAIAPI_API_KEY is missing; image/video generation will be unavailable");
+  } else if (isPlaceholder(env.SUPERAIAPI_API_KEY)) {
+    warn("SUPERAIAPI_API_KEY is still using placeholder value; image/video generation will be unavailable");
+  } else {
+    ok("SUPERAIAPI_API_KEY is configured");
   }
 
   if (!hasFailure) {

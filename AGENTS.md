@@ -13,6 +13,7 @@ Set up a usable content workflow where Feishu is installed first via the officia
 - User can provide:
   - `WECHAT_APPID`
   - `WECHAT_APPSECRET`
+  - `SUPERAIAPI_API_KEY` for image and future video generation
 - The machine's outbound IP may need to be added to the WeChat backend whitelist
 
 ## Recommended Agent Flow
@@ -29,6 +30,7 @@ Set up a usable content workflow where Feishu is installed first via the officia
 4. Ask the user only for missing sensitive values:
    - `WECHAT_APPID`
    - `WECHAT_APPSECRET`
+   - `SUPERAIAPI_API_KEY`
 5. Write them into `.env`
 6. Run `npm run doctor`
 7. If doctor passes, optionally verify with:
@@ -50,6 +52,10 @@ When the user does not specify a type, default to `news`.
 - When using local Markdown images, keep paths valid relative to the article file because they will be uploaded and replaced automatically
 - For `news`, require `--cover`
 - For `newspic`, require `--image` or reuse `--cover`
+- Do not log or expose `SUPERAIAPI_API_KEY`
+- Prefer `npm run image -- --provider nano-banana2 ...` for generated covers that benefit from Gemini native image generation.
+- Use `gpt-image-2` when OpenAI image style or output is requested.
+- Do not rely on image models to render final Chinese title text accurately. Prefer generating the background/composition first, then overlaying exact text with SVG/HTML/image scripts.
 
 ## User-Facing Success Criteria
 
@@ -58,3 +64,4 @@ The project is considered configured only when:
 - `.env` exists with real values
 - `npm run doctor` passes
 - The user can run at least one successful draft command
+- If image generation is requested, `SUPERAIAPI_API_KEY` is configured and `npm run image` succeeds

@@ -43,6 +43,18 @@ export function getConfig() {
     author: process.env.WECHAT_AUTHOR || "",
     needOpenComment: Number(process.env.WECHAT_NEED_OPEN_COMMENT || 0),
     onlyFansCanComment: Number(process.env.WECHAT_ONLY_FANS_CAN_COMMENT || 0),
+    superaiapi: getSuperaiapiConfig({ required: false }),
   };
 }
 
+export function getSuperaiapiConfig({ required = true } = {}) {
+  const apiKey = process.env.SUPERAIAPI_API_KEY;
+  const baseUrl = (process.env.SUPERAIAPI_BASE_URL || "https://superaiapi.top").replace(/\/+$/, "");
+  if (required && !apiKey) {
+    throw new Error("Missing SUPERAIAPI_API_KEY in .env");
+  }
+  return {
+    apiKey: apiKey || "",
+    baseUrl,
+  };
+}
