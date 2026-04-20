@@ -1,0 +1,20 @@
+{
+  "wechat_cover": {
+    "width": 1800,
+    "height": 766,
+    "safe_area": {"x": 150, "y": 80, "width": 1500, "height": 606},
+    "description": "微信公众号头图标准尺寸"
+  },
+  "x_card": {
+    "width": 1200,
+    "height": 630,
+    "safe_area": {"x": 100, "y": 50, "width": 1000, "height": 530},
+    "description": "X (Twitter) Summary Card Large Image"
+  },
+  "generic_cover": {
+    "width": 1200,
+    "height": 630,
+    "safe_area": {"x": 100, "y": 80, "width": 1000, "height": 470},
+    "description": "通用文章封面"
+  }
+}

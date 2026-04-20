@@ -6,6 +6,8 @@ This project is designed to be configured by coding agents such as Codex or Open
 
 Set up a usable content workflow where Feishu is installed first via the official Feishu CLI path, and WeChat draft capability is configured afterwards through this project.
 
+This repository now also includes an internal SVG cover workflow under `design/cover-studio/` for code-native cover generation, validation, and export.
+
 ## Environment Expectations
 
 - Node.js `>= 20`
@@ -56,6 +58,7 @@ When the user does not specify a type, default to `news`.
 - Prefer `npm run image -- --provider nano-banana2 ...` for generated covers that benefit from Gemini native image generation.
 - Use `gpt-image-2` when OpenAI image style or output is requested.
 - Do not rely on image models to render final Chinese title text accurately. Prefer generating the background/composition first, then overlaying exact text with SVG/HTML/image scripts.
+- If the user needs SVG-native cover work, prefer the integrated assets under `design/cover-studio/` rather than introducing another cover project.
 
 ## User-Facing Success Criteria
 

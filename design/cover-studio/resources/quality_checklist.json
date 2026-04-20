@@ -1,0 +1,22 @@
+{
+  "accessibility": [
+    { "id": "acc-1", "item": "包含 <title> 和 <desc> 标签", "severity": "Medium" },
+    { "id": "acc-2", "item": "文字与背景对比度至少 4.5:1", "severity": "High" },
+    { "id": "acc-3", "item": "提供 aria-label (若必要)", "severity": "Low" }
+  ],
+  "technical": [
+    { "id": "tech-1", "item": "必须包含正确的 viewBox 属性", "severity": "High" },
+    { "id": "tech-2", "item": "明确定义 preserveAspectRatio", "severity": "Medium" },
+    { "id": "tech-3", "item": "无外部资源链接 (如外部字体/脚本)", "severity": "High" },
+    { "id": "tech-4", "item": "所有 ID 具有唯一性且带前缀 (多图内联防冲突)", "severity": "Medium" }
+  ],
+  "composition": [
+    { "id": "comp-1", "item": "关键信息位于 Safe Area (安全区) 内", "severity": "High" },
+    { "id": "comp-2", "item": "视觉焦点明确，无过度拥挤", "severity": "Medium" },
+    { "id": "comp-3", "item": "连线平滑 (贝塞尔或圆角)，无穿模", "severity": "Medium" }
+  ],
+  "branding": [
+    { "id": "brand-1", "item": "符合 Apple/Vercel/Stripe 风格规范", "severity": "Medium" },
+    { "id": "brand-2", "item": "配色方案遵循暗黑科技感基调", "severity": "Medium" }
+  ]
+}

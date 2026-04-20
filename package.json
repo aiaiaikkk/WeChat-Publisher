@@ -12,7 +12,11 @@
     "update-draft": "node scripts/update-draft.js",
     "upload:content-image": "node scripts/upload-content-image.js",
     "upload:cover": "node scripts/upload-cover.js",
-    "image": "node scripts/generate-image.js"
+    "image": "node scripts/generate-image.js",
+    "cover:doctor": "python3 design/cover-studio/scripts/setup_doctor.py",
+    "cover:validate": "python3 design/cover-studio/scripts/svg_validator.py",
+    "cover:fix": "python3 design/cover-studio/scripts/svg_fixer.py",
+    "cover:export": "python3 design/cover-studio/scripts/optimize_and_convert.py"
   },
   "engines": {
     "node": ">=20"

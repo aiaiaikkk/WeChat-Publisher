@@ -7,6 +7,7 @@
 - 图文消息草稿
 - 图片消息草稿
 - 通过 SuperAIAPI 生成图像
+- 集成 `svg-cover-studio` 的 SVG 封面工作流
 - 配合 Feishu CLI 使用飞书相关能力
 
 ## 安装方式
@@ -106,6 +107,37 @@ npm run image -- \
 - `nano-banana2` 图生图可用
 - `gpt-image-2` 文生图可用
 - `gpt-image-2` 图生图可用
+
+## SVG 封面工作流
+
+项目内已经整合 `svg-cover-studio`，目录位于：
+
+```text
+design/cover-studio/
+```
+
+里面包含：
+
+- 封面规则：`design/cover-studio/SKILL.md`
+- 模板：`design/cover-studio/templates/`
+- 参考资料：`design/cover-studio/references/`
+- 资源配置：`design/cover-studio/resources/`
+- SVG 校验与导出脚本：`design/cover-studio/scripts/`
+
+常用命令：
+
+```bash
+npm run cover:doctor
+python3 design/cover-studio/scripts/svg_validator.py --svg your-cover.svg --json
+python3 design/cover-studio/scripts/optimize_and_convert.py your-cover.svg --format all
+```
+
+这意味着你现在可以在同一个项目里完成：
+
+- 公众号正文整理
+- 封面 SVG 设计与校验
+- AI 图像生成
+- 微信草稿发布
 
 ## 创作公众号文章的最佳实践
 

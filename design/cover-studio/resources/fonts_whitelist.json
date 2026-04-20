@@ -1,0 +1,7 @@
+[
+  { "family": "Inter", "weight": ["400", "600", "800"], "usage": "Default Modern UI" },
+  { "family": "PingFang SC", "weight": ["400", "600"], "usage": "Standard Chinese" },
+  { "family": "SF Pro Display", "weight": ["400", "800"], "usage": "Apple Style" },
+  { "family": "JetBrains Mono", "weight": ["400"], "usage": "Code Snippets" },
+  { "family": "Roboto", "weight": ["400", "700"], "usage": "Generic Tech" }
+]
