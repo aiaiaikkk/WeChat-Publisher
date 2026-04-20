@@ -1,16 +1,14 @@
-# SVG Cover Studio
+# SVG Cover Studio in WeChat Publisher
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+This directory contains the integrated SVG cover workflow used by `WeChat-Publisher`.
 
-`svg-cover-studio` is a local, agent-agnostic SVG cover generation toolkit for developer content.
+It is responsible for code-native cover generation, validation, repair, and export. The goal is to keep article covers, social cards, and technical headers in the same repository as draft generation and WeChat publishing, instead of maintaining a separate cover toolchain.
 
-It is designed for teams who want to generate and refine cover images, article headers, social cards, and lightweight technical visuals directly from code, without depending on a single model vendor or extension runtime.
-
-This project is adapted from and inspired by [`zhaodl1983/svg-architect`](https://github.com/zhaodl1983/svg-architect), with the goal of making the workflow easier to reuse in local multi-agent setups such as Codex, OpenClaw, Hermes, Claude, Gemini, or any other agent that can read prompt rules and edit files.
+This module is adapted from and inspired by [`zhaodl1983/svg-architect`](https://github.com/zhaodl1983/svg-architect), then further simplified for the `WeChat-Publisher` workflow.
 
 ## What It Includes
 
-- A reusable local skill entry: `SKILL.md`
+- A reusable local rule entry: `SKILL.md`
 - Tech-dark and light visual specs
 - Platform and cover-size profiles
 - SVG validation and auto-fix scripts
@@ -19,7 +17,7 @@ This project is adapted from and inspired by [`zhaodl1983/svg-architect`](https:
 ## Project Structure
 
 ```text
-svg-cover-studio/
+design/cover-studio/
 ├── SKILL.md
 ├── references/
 ├── resources/
@@ -39,7 +37,7 @@ svg-cover-studio/
 
 ### 1. Use the rules directly
 
-Open [`SKILL.md`](./SKILL.md) and let your local agent follow it while generating or editing an SVG cover.
+Open [`SKILL.md`](./SKILL.md) and let your local agent follow it while generating or editing an SVG cover inside `WeChat-Publisher`.
 
 ### 2. Validate an SVG
 
@@ -61,7 +59,7 @@ python3 scripts/optimize_and_convert.py your-cover.svg --format all
 
 ## Environment Notes
 
-The core SVG workflow works with plain file editing.
+The core SVG workflow works with plain file editing and fits naturally into the same repository that already manages article drafts and WeChat publishing.
 
 Optional export/optimization tools:
 
@@ -77,7 +75,7 @@ python3 scripts/setup_doctor.py --json
 
 ## Design Direction
 
-Default strengths:
+Default strengths in the `WeChat-Publisher` context:
 
 - large readable headlines
 - strong cover composition
@@ -93,4 +91,4 @@ Source project:
 - Project name: `svg-architect`
 - Repository: [`https://github.com/zhaodl1983/svg-architect`](https://github.com/zhaodl1983/svg-architect)
 
-This repository is an independently adapted local multi-agent version. The goal here is to preserve the durable design system, templates, and validation helpers while removing agent-specific coupling and machine-specific assumptions.
+Inside `WeChat-Publisher`, this module serves as the internal cover generation layer. It keeps the durable design system, templates, and validation helpers while staying aligned with the publishing workflow.

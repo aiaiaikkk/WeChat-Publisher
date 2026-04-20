@@ -5,16 +5,16 @@ description: Create or refine local SVG cover images, article headers, social ca
 
 # SVG Cover Studio
 
-Use this skill when the user wants a cover image, article header, social card, visual title graphic, or other code-generated SVG asset that should be produced locally and edited as files.
+Use this internal module when the user wants a cover image, article header, social card, visual title graphic, or other code-generated SVG asset that should be produced locally and edited as files inside `WeChat-Publisher`.
 
-This skill is a local, agent-agnostic adaptation of the upstream `svg-architect` project. Keep the parts that are durable:
+This module is a local, agent-agnostic adaptation of the upstream `svg-architect` project, integrated into `WeChat-Publisher`. Keep the parts that are durable:
 
 - clear scene sizing
 - high-readability title composition
 - tech-dark and light visual specs
 - SVG validation and repair scripts
 
-Do not assume Gemini CLI, extension installs, or any fixed machine-specific output path.
+Do not assume Gemini CLI, extension installs, or any fixed machine-specific output path. Prefer paths that fit the `WeChat-Publisher` workspace.
 
 ## Quick workflow
 
