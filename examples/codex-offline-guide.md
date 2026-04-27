@@ -262,7 +262,7 @@ bash ./install-codex-macos-x64.sh
 
 ### 第五步：拿到 base_url 和 API key
 
-令牌创建成功后，把平台提供的 `base_url` 和 `api_key` 保存下来，后面可以直接填进 Codex 或者配置脚本中。这里的 `base_url` 可以填写为：`https://superaiapi.top/v1`。
+令牌创建成功后，把平台提供的 `base_url` 和 `api_key` 保存下来，后面可以直接填进 Codex 或者配置脚本中。这里的 `base_url` 可以填写为：`https://superaiapi.com/v1`。
 
 ![保存 base_url 和 api_key](./superaiapi-assets/step-8-save-base-url-and-key.png)
 

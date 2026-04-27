@@ -36,8 +36,8 @@
 
 - 微信公众号的 `AppID`
 - 微信公众号的 `AppSecret`
-- [SuperAIAPI](https://superaiapi.top/) 的站点地址 `https://superaiapi.top/`
-- [SuperAIAPI](https://superaiapi.top/) 的 `API Key`（用于图像和后续视频生成）
+- [SuperAIAPI](https://superaiapi.com/) 的站点地址 `https://superaiapi.com/`
+- [SuperAIAPI](https://superaiapi.com/) 的 `API Key`（用于图像和后续视频生成）
 
 如果 `doctor` 提示 IP 白名单问题，还需要：
 
@@ -58,7 +58,7 @@
 
 配置好 `SUPERAIAPI_API_KEY` 后，可以生成图片：
 
-默认 API 站点地址是 `https://superaiapi.top/`，也可以通过 `SUPERAIAPI_BASE_URL` 覆盖。
+默认 API 站点地址是 `https://superaiapi.com/`，也可以通过 `SUPERAIAPI_BASE_URL` 覆盖。
 
 ```bash
 npm run image -- \

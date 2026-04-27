@@ -49,7 +49,7 @@ export function getConfig() {
 
 export function getSuperaiapiConfig({ required = true } = {}) {
   const apiKey = process.env.SUPERAIAPI_API_KEY;
-  const baseUrl = (process.env.SUPERAIAPI_BASE_URL || "https://superaiapi.top").replace(/\/+$/, "");
+  const baseUrl = (process.env.SUPERAIAPI_BASE_URL || "https://superaiapi.com").replace(/\/+$/, "");
   if (required && !apiKey) {
     throw new Error("Missing SUPERAIAPI_API_KEY in .env");
   }
